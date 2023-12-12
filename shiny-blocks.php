@@ -25,6 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function shiny_blocks_shiny_blocks_block_init() {
-	register_block_type( __DIR__ . '/build' );
+	register_block_type( __DIR__ . '/build/typing-text' );
+	register_block_type( __DIR__ . '/build/advance-image' );
 }
 add_action( 'init', 'shiny_blocks_shiny_blocks_block_init' );

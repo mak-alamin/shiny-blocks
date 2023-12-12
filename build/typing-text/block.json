@@ -1,12 +1,12 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/shiny-blocks",
-  "version": "0.1.0",
-  "title": "Shiny Blocks",
+  "name": "shiny-blocks/typing-text",
+  "version": "0.0.1",
+  "title": "Typing Text",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "ellipsis",
+  "description": "Typing Effect for Texts.",
   "example": {},
   "supports": {
     "html": false

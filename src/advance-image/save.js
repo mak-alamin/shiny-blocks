@@ -18,7 +18,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save() {
 	return (
 		<p { ...useBlockProps.save() }>
-			{ 'Shiny Blocks – hello from the saved content!!!' }
+			{ 'Hello from Typewriter Text saved content!!!' }
 		</p>
 	);
 }

@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-shiny-blocks block)' );
+console.log( 'Hello from Typewriter Text' );
 /* eslint-enable no-console */

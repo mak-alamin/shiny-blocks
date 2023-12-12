@@ -1,12 +1,12 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/shiny-blocks",
-	"version": "0.1.0",
-	"title": "Shiny Blocks",
+	"name": "shiny-blocks/advance-image",
+	"version": "0.0.1",
+	"title": "Advance Image",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Advance Image.",
 	"example": {},
 	"supports": {
 		"html": false
