@@ -4,7 +4,7 @@
   "name": "shiny-blocks/advance-image",
   "version": "0.0.1",
   "title": "Advance Image",
-  "category": "widgets",
+  "category": "shiny-blocks",
   "icon": "smiley",
   "description": "Advance Image.",
   "example": {},

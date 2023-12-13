@@ -223,7 +223,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/advance-image","version":"0.0.1","title":"Advance Image","category":"widgets","icon":"smiley","description":"Advance Image.","example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/advance-image","version":"0.0.1","title":"Advance Image","category":"shiny-blocks","icon":"smiley","description":"Advance Image.","example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

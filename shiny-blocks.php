@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Shiny Blocks
- * Description:       Stunning Gutenberg Blocks.
+ * Description:       Build your WordPress website with Stunning Gutenberg Blocks.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
@@ -10,7 +10,7 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       shiny-blocks
  *
- * @package           create-block
+ * @package           shiny-blocks
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -29,3 +29,16 @@ function shiny_blocks_shiny_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/advance-image' );
 }
 add_action( 'init', 'shiny_blocks_shiny_blocks_block_init' );
+
+// Add category for blocks 
+function shiny_blocks_register_blocks_category( $categories ) {
+	$categories[] = array( 'slug' => 'shiny-blocks', 'title' => 'Shiny Blocks' ); 
+	
+	return $categories; 
+}
+
+if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
+	add_filter( 'block_categories_all', 'shiny_blocks_register_blocks_category' );
+} else {
+	add_filter( 'block_categories', 'shiny_blocks_register_blocks_category' );
+}

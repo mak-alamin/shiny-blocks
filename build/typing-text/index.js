@@ -223,7 +223,7 @@ module.exports = window["wp"]["i18n"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"widgets","icon":"ellipsis","description":"Typing Effect for Texts.","example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
