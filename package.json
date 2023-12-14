@@ -18,6 +18,7 @@
 		"@wordpress/scripts": "^26.18.0"
 	},
 	"dependencies": {
+		"@wordpress/components": "^25.14.0",
 		"@wordpress/icons": "^9.38.0"
 	}
 }

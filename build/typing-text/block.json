@@ -7,6 +7,14 @@
   "category": "shiny-blocks",
   "icon": "ellipsis",
   "description": "Typing Effect for Texts.",
+  "attributes": {
+    "message": {
+      "type": "string",
+      "source": "text",
+      "selector": "p",
+      "default": "Your text here..."
+    }
+  },
   "example": {},
   "supports": {
     "html": false

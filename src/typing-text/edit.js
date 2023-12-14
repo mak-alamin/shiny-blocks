@@ -12,6 +12,7 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps } from '@wordpress/block-editor';
+import { TextControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,10 +30,13 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
+export default function Edit({attributes, setAttributes}) {
 	return (
 		<p { ...useBlockProps() }>
-			{ __( 'Typewriter Text – hello from the editor!', 'shiny-blocks' ) }
+			   <TextControl
+                value={ attributes.message }
+                onChange={ ( val ) => setAttributes( { message: val } ) }
+            />
 		</p>
 	);
 }
