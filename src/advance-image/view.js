@@ -21,5 +21,5 @@
  */
 
 /* eslint-disable no-console */
-console.log( 'Hello from Typewriter Text' );
+console.log( 'Hello from Adv. Image' );
 /* eslint-enable no-console */

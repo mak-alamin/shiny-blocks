@@ -51,10 +51,38 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-function Edit() {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+function Edit({
+  attributes,
+  setAttributes
+}) {
+  const setImageAttributes = media => {
+    if (!media || !media.url) {
+      setAttributes({
+        imageUrl: null,
+        imageId: null,
+        imageAlt: null
+      });
+      return;
+    }
+    setAttributes({
+      imageUrl: media.url,
+      imageId: media.id,
+      imageAlt: media?.alt
+    });
+  };
+  const mediaPreview = !!attributes.imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: attributes.imageUrl
+  });
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Adv Image – hello from the editor!', 'shiny-blocks'));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaPlaceholder, {
+    accept: "image/*",
+    allowedTypes: ["image"],
+    onSelect: setImageAttributes,
+    multiple: false,
+    handleUpload: true,
+    mediaPreview: mediaPreview
+  }));
 }
 
 /***/ }),
@@ -223,7 +251,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/advance-image","version":"0.0.1","title":"Advance Image","category":"shiny-blocks","icon":"smiley","description":"Advance Image.","example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/advance-image","version":"0.0.1","title":"Advance Image","category":"shiny-blocks","icon":"smiley","description":"Advance Image.","attributes":{"imageUrl":{"type":"string","source":"attribute","selector":"img","attribute":"src","default":""},"imageId":{"type":"number"},"imageAlt":{"type":"string","source":"attribute","selector":"img","attribute":"alt","default":""}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

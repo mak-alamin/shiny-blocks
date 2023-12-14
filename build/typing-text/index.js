@@ -159,9 +159,15 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+  const {
+    imageUrl
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, attributes.message);
+  }, imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: imageUrl,
+    alt: imageAlt
+  }));
 }
 
 /***/ }),

@@ -7,6 +7,25 @@
   "category": "shiny-blocks",
   "icon": "smiley",
   "description": "Advance Image.",
+  "attributes": {
+    "imageUrl": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "src",
+      "default": ""
+    },
+    "imageId": {
+      "type": "number"
+    },
+    "imageAlt": {
+      "type": "string",
+      "source": "attribute",
+      "selector": "img",
+      "attribute": "alt",
+      "default": ""
+    }
+  },
   "example": {},
   "supports": {
     "html": false
