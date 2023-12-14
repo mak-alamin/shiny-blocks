@@ -15,10 +15,14 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save({attributes}) {
+	console.log(attributes);
+
+	const {imageUrl, imageAlt} = attributes;
+
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Hello from Typewriter Text saved content!!!' }
-		</p>
+		<figure className='size-full' { ...useBlockProps.save() }>
+			{imageUrl && <img src={imageUrl} alt={imageAlt} />}
+		</figure>
 	);
 }
