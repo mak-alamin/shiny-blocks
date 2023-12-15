@@ -21,7 +21,7 @@ export default function save({attributes}) {
 	const {imageUrl, imageAlt} = attributes;
 
 	return (
-		<figure className='size-full' { ...useBlockProps.save() }>
+		<figure { ...useBlockProps.save() }>
 			{imageUrl && <img src={imageUrl} alt={imageAlt} />}
 		</figure>
 	);

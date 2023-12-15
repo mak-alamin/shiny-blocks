@@ -6,8 +6,8 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-shiny-blocks {
-  border: 1px dotted #f00;
+.components-placeholder__preview img {
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map*/

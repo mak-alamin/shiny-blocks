@@ -182,7 +182,6 @@ function save({
     imageAlt
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("figure", {
-    className: "size-full",
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, imageUrl && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: imageUrl,
