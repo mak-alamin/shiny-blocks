@@ -11,7 +11,13 @@ import { __ } from "@wordpress/i18n";
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
+import { Fragment, useEffect, useRef } from "@wordpress/element";
+import {
+	useBlockProps,
+	MediaPlaceholder,
+	MediaUpload,
+	BlockControls,
+} from "@wordpress/block-editor";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -20,6 +26,11 @@ import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import "./editor.scss";
+import {
+	ToolbarGroup,
+	ToolbarButton,
+	ToolbarItem,
+} from "@wordpress/components";
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,7 +40,9 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-export default function Edit({ attributes, setAttributes } ) {
+export default function Edit({ attributes, setAttributes }) {
+	const {imageId} = attributes;
+	
 	const setImageAttributes = (media) => {
 		if (!media || !media.url) {
 			setAttributes({
@@ -45,22 +58,56 @@ export default function Edit({ attributes, setAttributes } ) {
 			imageAlt: media?.alt,
 		});
 	};
-	
-	const mediaPreview = !! attributes.imageUrl && (
-		<img src={ attributes.imageUrl } />
+
+	const mediaPreview = !!attributes.imageUrl && (
+		<img src={attributes.imageUrl} />
 	);
 
 	return (
 		<div {...useBlockProps()}>
 			{
-				<MediaPlaceholder
-					accept="image/*"
-					allowedTypes={["image"]}
-					onSelect={setImageAttributes}
-					multiple={false}
-					handleUpload={true}
-					mediaPreview={ mediaPreview }
-				></MediaPlaceholder>
+				<Fragment>
+					<MediaPlaceholder
+						accept="image/*"
+						allowedTypes={["image"]}
+						onSelect={setImageAttributes}
+						multiple={false}
+						handleUpload={true}
+						mediaPreview={mediaPreview}
+					></MediaPlaceholder>
+				</Fragment>
+			}
+			{
+				<Fragment>
+					<BlockControls>
+						<ToolbarGroup>
+							<ToolbarItem>
+								{() => (
+									<MediaUpload
+										value={imageId}
+										onSelect={(media) => {
+											setAttributes({
+												imageUrl: media.url,
+												imageId: media.id,
+												imageAlt: media?.alt,
+											});
+										}}
+										accept="image/*"
+										allowedTypes={["image"]}
+										render={({ open }) => (
+											<ToolbarButton
+												className="components-toolbar__control"
+												label={__("Replace Image", "essential-blocks")}
+												icon="edit"
+												onClick={open}
+											/>
+										)}
+									/>
+								)}
+							</ToolbarItem>
+						</ToolbarGroup>
+					</BlockControls>
+				</Fragment>
 			}
 		</div>
 	);
