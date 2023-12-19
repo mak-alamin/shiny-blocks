@@ -42,7 +42,7 @@ import {
  */
 export default function Edit({ attributes, setAttributes }) {
 	const {imageId} = attributes;
-	
+
 	const setImageAttributes = (media) => {
 		if (!media || !media.url) {
 			setAttributes({
@@ -74,6 +74,11 @@ export default function Edit({ attributes, setAttributes }) {
 						multiple={false}
 						handleUpload={true}
 						mediaPreview={mediaPreview}
+						labels={{
+                            title: "Upload Image",
+                            instructions:
+                                "Drag media file, upload or select image from your library.",
+                        }}
 					></MediaPlaceholder>
 				</Fragment>
 			}

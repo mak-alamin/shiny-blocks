@@ -90,7 +90,11 @@ function Edit({
     onSelect: setImageAttributes,
     multiple: false,
     handleUpload: true,
-    mediaPreview: mediaPreview
+    mediaPreview: mediaPreview,
+    labels: {
+      title: "Upload Image",
+      instructions: "Drag media file, upload or select image from your library."
+    }
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarGroup, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__.ToolbarItem, null, () => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.MediaUpload, {
     value: imageId,
     onSelect: media => {
