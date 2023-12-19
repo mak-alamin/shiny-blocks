@@ -5,7 +5,7 @@
   "version": "0.0.1",
   "title": "Advance Image",
   "category": "shiny-blocks",
-  "icon": "smiley",
+  "icon": "format-image",
   "description": "Advance Image.",
   "attributes": {
     "imageUrl": {
