@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name:       Shiny Blocks
  * Description:       Build your WordPress website with Stunning Gutenberg Blocks.
@@ -13,7 +14,7 @@
  * @package           shiny-blocks
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
 
@@ -24,21 +25,23 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
-function shiny_blocks_shiny_blocks_block_init() {
-	register_block_type( __DIR__ . '/build/typing-text' );
-	register_block_type( __DIR__ . '/build/advance-image' );
+function shiny_blocks_shiny_blocks_block_init()
+{
+	register_block_type(__DIR__ . '/build/typing-text');
+	register_block_type(__DIR__ . '/build/advance-image');
 }
-add_action( 'init', 'shiny_blocks_shiny_blocks_block_init' );
+add_action('init', 'shiny_blocks_shiny_blocks_block_init');
 
 // Add category for blocks 
-function shiny_blocks_register_blocks_category( $categories ) {
-	$categories[] = array( 'slug' => 'shiny-blocks', 'title' => 'Shiny Blocks' ); 
-	
-	return $categories; 
+function shiny_blocks_register_blocks_category($categories, $post)
+{
+	array_unshift($categories, array('slug' => 'shiny-blocks', 'title' => 'Shiny Blocks'));
+
+	return $categories;
 }
 
-if ( version_compare( get_bloginfo( 'version' ), '5.8', '>=' ) ) {
-	add_filter( 'block_categories_all', 'shiny_blocks_register_blocks_category' );
+if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
+	add_filter('block_categories_all', 'shiny_blocks_register_blocks_category', 99, 2);
 } else {
-	add_filter( 'block_categories', 'shiny_blocks_register_blocks_category' );
+	add_filter('block_categories', 'shiny_blocks_register_blocks_category', 99,2);
 }
