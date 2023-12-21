@@ -13,7 +13,9 @@
 			"source": "text",
 			"selector": "p",
 			"default": "Your text here..."
-		}
+		},
+		"bg_color": { "type": "string", "default": "#000000" },
+		"text_color": { "type": "string", "default": "#ffffff" }
 	},
 	"example": {},
 	"supports": {
