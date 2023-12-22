@@ -6,8 +6,14 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-create-block-shiny-blocks {
-  border: 1px dotted #f00;
+.sb-panel-control .shiny-blocks-tab.components-tab-panel__tabs-item.active-tab {
+  background: rgba(0, 124, 186, 0.1607843137);
+  border: 2px solid rgba(19, 94, 150, 0.8588235294);
+  border-bottom: 0;
+}
+
+.sb-panel-control .components-tab-panel__tab-content {
+  background: #d6eaf4;
 }
 
 /*# sourceMappingURL=index.css.map*/

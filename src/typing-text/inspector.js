@@ -89,7 +89,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							)}
 							{tab.name === "styles" && (
 								<>
-									<h3>Styles</h3>
+									<div>Styles</div>
 									
 									{prefix && (
 										<PanelBody
@@ -119,7 +119,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							)}
 							{tab.name === "advanced" && (
 								<>
-									<h3>Advanced</h3>
+									<div>Advanced</div>
 								</>
 							)}
 						</div>

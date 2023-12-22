@@ -5,5 +5,13 @@
  */
 
 .wp-block-create-block-shiny-blocks {
-	border: 1px dotted #f00;
+	// border: 1px dotted #f00;
+}
+.sb-panel-control .shiny-blocks-tab.components-tab-panel__tabs-item.active-tab {
+    background: #007cba29;
+    border: 2px solid #135e96db;
+    border-bottom: 0;
+}
+.sb-panel-control .components-tab-panel__tab-content {
+    background: #d6eaf4;
 }
