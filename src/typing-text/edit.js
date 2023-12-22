@@ -20,7 +20,6 @@ import { TextControl } from "@wordpress/components";
 
 import Inspector from "./inspector";
 
-
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -38,15 +37,6 @@ import "./editor.scss";
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes, isSelected }) {
-
-	const onChangeBGColor = ( hexColor ) => {
-		setAttributes( { bg_color: hexColor } );
-	};
-
-	const onChangeTextColor = ( hexColor ) => {
-		setAttributes( { text_color: hexColor } );
-	};
-
 	return (
 		<p {...useBlockProps()}>
 			{isSelected && (

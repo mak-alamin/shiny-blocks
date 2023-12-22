@@ -41,6 +41,15 @@ const Inspector = ({ attributes, setAttributes }) => {
 		attributes
 	};
 
+	const onChangeBGColor = ( hexColor ) => {
+		setAttributes( { bg_color: hexColor } );
+	};
+
+	const onChangeTextColor = ( hexColor ) => {
+		setAttributes( { text_color: hexColor } );
+	};
+
+
 	return (
 		<InspectorControls key="controls">
 			<div className="sb-panel-control">
@@ -72,16 +81,21 @@ const Inspector = ({ attributes, setAttributes }) => {
 									<PanelBody title={__("Content Settings", "shiny-blocks")}>
 							
 									</PanelBody>
+
+									<PanelBody title={__("Animation Settings", "shiny-blocks")}>
+							
+									</PanelBody>
 								</>
 							)}
 							{tab.name === "styles" && (
 								<>
+									<h3>Styles</h3>
+									
 									{prefix && (
 										<PanelBody
 											title={__("Prefix", "shiny-blocks")}
 											initialOpen={false}
 										>
-											
 										</PanelBody>
 									)}
 
@@ -105,10 +119,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 							)}
 							{tab.name === "advanced" && (
 								<>
-									<AdvancedControls
-										attributes={attributes}
-										setAttributes={setAttributes}
-									/>
+									<h3>Advanced</h3>
 								</>
 							)}
 						</div>

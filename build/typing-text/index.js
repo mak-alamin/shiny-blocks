@@ -61,16 +61,6 @@ function Edit({
   setAttributes,
   isSelected
 }) {
-  const onChangeBGColor = hexColor => {
-    setAttributes({
-      bg_color: hexColor
-    });
-  };
-  const onChangeTextColor = hexColor => {
-    setAttributes({
-      text_color: hexColor
-    });
-  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -196,6 +186,16 @@ const Inspector = ({
     resOption,
     attributes
   };
+  const onChangeBGColor = hexColor => {
+    setAttributes({
+      bg_color: hexColor
+    });
+  };
+  const onChangeTextColor = hexColor => {
+    setAttributes({
+      text_color: hexColor
+    });
+  };
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
     key: "controls"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -220,7 +220,9 @@ const Inspector = ({
     className: "shiny-blocks-tab-controls" + tab.name
   }, tab.name === "general" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content Settings", "shiny-blocks")
-  })), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, prefix && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Animation Settings", "shiny-blocks")
+  })), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Styles"), prefix && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Prefix", "shiny-blocks"),
     initialOpen: false
   }), typedText.length > 0 && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
@@ -229,10 +231,7 @@ const Inspector = ({
   }), suffix && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Suffix", "shiny-blocks"),
     initialOpen: false
-  })), tab.name === "advanced" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(AdvancedControls, {
-    attributes: attributes,
-    setAttributes: setAttributes
-  }))))));
+  })), tab.name === "advanced" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Advanced"))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Inspector);
 
@@ -370,7 +369,7 @@ module.exports = window["wp"]["i18n"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"message":{"type":"string","source":"text","selector":"p","default":"Your text here..."},"bg_color":{"type":"string","default":"#000000"},"text_color":{"type":"string","default":"#ffffff"}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"message":{"type":"string","source":"text","selector":"p","default":"Your text here..."},"bg_color":{"type":"string","default":"#000000"},"resOption":{"type":"string","default":"Desktop"},"uniqueIdNumber":{"type":"number"},"blockId":{"type":"string"},"blockRoot":{"type":"string","default":"essential_block"},"blockMeta":{"type":"object"},"prefix":{"type":"string","source":"text","selector":".eb-typed-prefix"},"typedText":{"type":"array","source":"query","selector":".eb-typed-text","query":{"text":{"type":"string","source":"text"}},"default":[]},"suffix":{"type":"string","source":"text","selector":".eb-typed-suffix"},"prefixColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typedTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"suffixTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typeSpeed":{"type":"number","default":50},"startDelay":{"type":"number","default":0},"smartBackspace":{"type":"boolean","default":true},"backSpeed":{"type":"number","default":40},"backDelay":{"type":"number","default":700},"fadeOut":{"type":"boolean","default":false},"fadeOutDelay":{"type":"number","default":500},"loop":{"type":"boolean","default":false},"showCursor":{"type":"boolean","default":true},"textAlign":{"type":"string","default":"left"},"typedTextFontWeight":{"type":"string","default":600},"prefixTextFontWeight":{"type":"string","default":600},"suffixTextFontWeight":{"type":"string","default":600}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
