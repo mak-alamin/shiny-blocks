@@ -38,17 +38,16 @@ const Inspector = ({ attributes, setAttributes }) => {
 	const resRequiredProps = {
 		setAttributes,
 		resOption,
-		attributes
+		attributes,
 	};
 
-	const onChangeBGColor = ( hexColor ) => {
-		setAttributes( { bg_color: hexColor } );
+	const onChangeBGColor = (hexColor) => {
+		setAttributes({ bg_color: hexColor });
 	};
 
-	const onChangeTextColor = ( hexColor ) => {
-		setAttributes( { text_color: hexColor } );
+	const onChangeTextColor = (hexColor) => {
+		setAttributes({ text_color: hexColor });
 	};
-
 
 	return (
 		<InspectorControls key="controls">
@@ -79,48 +78,49 @@ const Inspector = ({ attributes, setAttributes }) => {
 							{tab.name === "general" && (
 								<>
 									<PanelBody title={__("Content Settings", "shiny-blocks")}>
-							
-									<TextControl
+										<TextControl
 											label={__("Prefix Text", "shiny-blocks")}
 											placeholder={__("Add prefix text", "shiny-blocks")}
 											value={prefix}
 											onChange={(prefix) => setAttributes({ prefix })}
 										/>
 
+										<TextControl
+											label={__("suffix Text", "shiny-blocks")}
+											placeholder={__("Add suffix text", "shiny-blocks")}
+											value={suffix}
+											onChange={(suffix) => setAttributes({ suffix })}
+										/>
 									</PanelBody>
 
-									<PanelBody title={__("Animation Settings", "shiny-blocks")}>
-							
-									</PanelBody>
+									<PanelBody
+										title={__("Animation Settings", "shiny-blocks")}
+									></PanelBody>
 								</>
 							)}
 							{tab.name === "styles" && (
 								<>
 									<div>Styles</div>
-									
+
 									{prefix && (
 										<PanelBody
 											title={__("Prefix", "shiny-blocks")}
 											initialOpen={false}
-										>
-										</PanelBody>
+										></PanelBody>
 									)}
 
 									{typedText.length > 0 && (
 										<PanelBody
 											title={__("Typed Text", "shiny-blocks")}
 											initialOpen={false}
-										>
-											
-										</PanelBody>
+										></PanelBody>
 									)}
 
 									{suffix && (
 										<PanelBody
 											title={__("Suffix", "shiny-blocks")}
 											initialOpen={false}
-										>	
-										</PanelBody>
+										></PanelBody>
 									)}
 								</>
 							)}

@@ -8,12 +8,6 @@
   "icon": "ellipsis",
   "description": "Typing Effect for Texts.",
   "attributes": {
-    "message": {
-      "type": "string",
-      "source": "text",
-      "selector": "p",
-      "default": "Your text here..."
-    },
     "bg_color": {
       "type": "string",
       "default": "#000000"
@@ -59,7 +53,8 @@
     "suffix": {
       "type": "string",
       "source": "text",
-      "selector": ".sb-typed-suffix"
+      "selector": ".sb-typed-suffix",
+      "default": "Suffix Text "
     },
     "prefixColor": {
       "type": "string",

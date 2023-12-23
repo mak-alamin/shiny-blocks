@@ -16,9 +16,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({attributes}) {
+	console.log(attributes);
 	return (
 		<p { ...useBlockProps.save() }>
-			{attributes.message}
+			<span>{attributes?.prefix}</span>
+			<span>{attributes?.typedText}</span>
+			<span>{attributes?.suffix}</span>
 		</p>
 	);
 }
