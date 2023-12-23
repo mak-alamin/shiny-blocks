@@ -38,24 +38,28 @@
     "prefix": {
       "type": "string",
       "source": "text",
-      "selector": ".eb-typed-prefix"
+      "selector": ".sb-typed-prefix",
+      "default": "Prefix Text "
     },
     "typedText": {
       "type": "array",
       "source": "query",
-      "selector": ".eb-typed-text",
+      "selector": ".sb-typed-text",
       "query": {
         "text": {
           "type": "string",
           "source": "text"
         }
       },
-      "default": []
+      "default": [
+        "Typed text 1...",
+        "Typed text 2..."
+      ]
     },
     "suffix": {
       "type": "string",
       "source": "text",
-      "selector": ".eb-typed-suffix"
+      "selector": ".sb-typed-suffix"
     },
     "prefixColor": {
       "type": "string",

@@ -80,6 +80,13 @@ const Inspector = ({ attributes, setAttributes }) => {
 								<>
 									<PanelBody title={__("Content Settings", "shiny-blocks")}>
 							
+									<TextControl
+											label={__("Prefix Text", "shiny-blocks")}
+											placeholder={__("Add prefix text", "shiny-blocks")}
+											value={prefix}
+											onChange={(prefix) => setAttributes({ prefix })}
+										/>
+
 									</PanelBody>
 
 									<PanelBody title={__("Animation Settings", "shiny-blocks")}>

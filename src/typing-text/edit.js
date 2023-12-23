@@ -15,6 +15,8 @@ import {
 	useBlockProps,
 	ColorPalette,
 	InspectorControls,
+	BlockControls,
+	AlignmentToolbar,
 } from "@wordpress/block-editor";
 import { TextControl } from "@wordpress/components";
 
@@ -36,20 +38,31 @@ import "./editor.scss";
  *
  * @return {Element} Element to render.
  */
-export default function Edit({ attributes, setAttributes, isSelected }) {
-	return (
-		<p {...useBlockProps()}>
-			{isSelected && (
-                <Inspector
-                    attributes={attributes}
-                    setAttributes={setAttributes}
-                />
-            )}
+export default function Edit(props) {
+	const { attributes, setAttributes, isSelected } = props;
 
-			<TextControl
-				value={attributes.message}
-				onChange={(val) => setAttributes({ message: val })}
-			/>
-		</p>
+	console.log(attributes);
+
+	const {prefix, typedText, suffix, textAlign} = attributes;
+
+	return (
+		<>
+			<BlockControls>
+				<AlignmentToolbar
+					value={textAlign}
+					onChange={(textAlign) => setAttributes({ textAlign })}
+				/>
+			</BlockControls>
+
+			{isSelected && (
+				<Inspector attributes={attributes} setAttributes={setAttributes} />
+			)}
+
+			<p {...useBlockProps()}>
+				<span className="sb-typed-prefix">{prefix ? prefix : "Prefix Text"}</span>
+				<span className="sb-typed-text"> {typedText ? typedText : "Typed text..." } </span>
+				<span className="sb-typed-suffix">{suffix ? suffix : "Suffix Text"}</span>
+			</p>
+		</>
 	);
 }

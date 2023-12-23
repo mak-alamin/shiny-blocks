@@ -56,22 +56,36 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {Element} Element to render.
  */
-function Edit({
-  attributes,
-  setAttributes,
-  isSelected
-}) {
-  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+function Edit(props) {
+  const {
+    attributes,
+    setAttributes,
+    isSelected
+  } = props;
+  console.log(attributes);
+  const {
+    prefix,
+    typedText,
+    suffix,
+    textAlign
+  } = attributes;
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
+    value: textAlign,
+    onChange: textAlign => setAttributes({
+      textAlign
+    })
+  })), isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    value: attributes.message,
-    onChange: val => setAttributes({
-      message: val
-    })
-  }));
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-prefix"
+  }, prefix ? prefix : "Prefix Text"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-text"
+  }, " ", typedText ? typedText : "Typed text...", " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-suffix"
+  }, suffix ? suffix : "Suffix Text")));
 }
 
 /***/ }),
@@ -220,7 +234,14 @@ const Inspector = ({
     className: "shiny-blocks-tab-controls" + tab.name
   }, tab.name === "general" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Content Settings", "shiny-blocks")
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.TextControl, {
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Prefix Text", "shiny-blocks"),
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Add prefix text", "shiny-blocks"),
+    value: prefix,
+    onChange: prefix => setAttributes({
+      prefix
+    })
+  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Animation Settings", "shiny-blocks")
   })), tab.name === "styles" && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Styles"), prefix && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Prefix", "shiny-blocks"),
@@ -369,7 +390,7 @@ module.exports = window["wp"]["i18n"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"message":{"type":"string","source":"text","selector":"p","default":"Your text here..."},"bg_color":{"type":"string","default":"#000000"},"resOption":{"type":"string","default":"Desktop"},"uniqueIdNumber":{"type":"number"},"blockId":{"type":"string"},"blockRoot":{"type":"string","default":"essential_block"},"blockMeta":{"type":"object"},"prefix":{"type":"string","source":"text","selector":".eb-typed-prefix"},"typedText":{"type":"array","source":"query","selector":".eb-typed-text","query":{"text":{"type":"string","source":"text"}},"default":[]},"suffix":{"type":"string","source":"text","selector":".eb-typed-suffix"},"prefixColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typedTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"suffixTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typeSpeed":{"type":"number","default":50},"startDelay":{"type":"number","default":0},"smartBackspace":{"type":"boolean","default":true},"backSpeed":{"type":"number","default":40},"backDelay":{"type":"number","default":700},"fadeOut":{"type":"boolean","default":false},"fadeOutDelay":{"type":"number","default":500},"loop":{"type":"boolean","default":false},"showCursor":{"type":"boolean","default":true},"textAlign":{"type":"string","default":"left"},"typedTextFontWeight":{"type":"string","default":600},"prefixTextFontWeight":{"type":"string","default":600},"suffixTextFontWeight":{"type":"string","default":600}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"message":{"type":"string","source":"text","selector":"p","default":"Your text here..."},"bg_color":{"type":"string","default":"#000000"},"resOption":{"type":"string","default":"Desktop"},"uniqueIdNumber":{"type":"number"},"blockId":{"type":"string"},"blockRoot":{"type":"string","default":"essential_block"},"blockMeta":{"type":"object"},"prefix":{"type":"string","source":"text","selector":".sb-typed-prefix","default":"Prefix Text "},"typedText":{"type":"array","source":"query","selector":".sb-typed-text","query":{"text":{"type":"string","source":"text"}},"default":["Typed text 1...","Typed text 2..."]},"suffix":{"type":"string","source":"text","selector":".sb-typed-suffix"},"prefixColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typedTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"suffixTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typeSpeed":{"type":"number","default":50},"startDelay":{"type":"number","default":0},"smartBackspace":{"type":"boolean","default":true},"backSpeed":{"type":"number","default":40},"backDelay":{"type":"number","default":700},"fadeOut":{"type":"boolean","default":false},"fadeOutDelay":{"type":"number","default":500},"loop":{"type":"boolean","default":false},"showCursor":{"type":"boolean","default":true},"textAlign":{"type":"string","default":"left"},"typedTextFontWeight":{"type":"string","default":600},"prefixTextFontWeight":{"type":"string","default":600},"suffixTextFontWeight":{"type":"string","default":600}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
