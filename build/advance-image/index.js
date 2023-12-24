@@ -208,7 +208,8 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  console.log(attributes);
+  // console.log(attributes);
+
   const {
     imageUrl,
     imageAlt

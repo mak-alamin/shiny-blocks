@@ -33,7 +33,7 @@
       "type": "string",
       "source": "text",
       "selector": ".sb-typed-prefix",
-      "default": "Prefix Text "
+      "default": "Prefix Text"
     },
     "typedText": {
       "type": "array",
@@ -42,19 +42,16 @@
       "query": {
         "text": {
           "type": "string",
-          "source": "text"
+          "source": "text",
+          "default": "Typed Text 1"
         }
-      },
-      "default": [
-        "Typed text 1...",
-        "Typed text 2..."
-      ]
+      }
     },
     "suffix": {
       "type": "string",
       "source": "text",
       "selector": ".sb-typed-suffix",
-      "default": "Suffix Text "
+      "default": "Suffix Text"
     },
     "prefixColor": {
       "type": "string",

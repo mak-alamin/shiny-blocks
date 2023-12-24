@@ -49,6 +49,8 @@ const Inspector = ({ attributes, setAttributes }) => {
 		setAttributes({ text_color: hexColor });
 	};
 
+	console.log(attributes);
+
 	return (
 		<InspectorControls key="controls">
 			<div className="sb-panel-control">

@@ -16,7 +16,7 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({attributes}) {
-	console.log(attributes);
+	// console.log(attributes);
 
 	const {imageUrl, imageAlt} = attributes;
 

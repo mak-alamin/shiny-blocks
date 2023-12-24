@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:       Shiny Blocks
  * Description:       Build your WordPress website with Stunning Gutenberg Blocks.
@@ -32,7 +31,9 @@ function shiny_blocks_shiny_blocks_block_init()
 }
 add_action('init', 'shiny_blocks_shiny_blocks_block_init');
 
-// Add category for blocks 
+/**
+ * Add category for blocks 
+ */
 function shiny_blocks_register_blocks_category($categories, $post)
 {
 	array_unshift($categories, array('slug' => 'shiny-blocks', 'title' => 'Shiny Blocks'));

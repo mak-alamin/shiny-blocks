@@ -16,12 +16,12 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save({attributes}) {
-	console.log(attributes);
+	//console.log(attributes);
 	return (
 		<p { ...useBlockProps.save() }>
-			<span>{attributes?.prefix}</span>
-			<span>{attributes?.typedText}</span>
-			<span>{attributes?.suffix}</span>
+			<span className="sb-typed-prefix">{attributes?.prefix}</span>
+			<span className="sb-typed-text">{attributes?.typedText}</span>
+			<span className="sb-typed-suffix">{attributes?.suffix}</span>
 		</p>
 	);
 }

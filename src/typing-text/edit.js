@@ -40,9 +40,6 @@ import "./editor.scss";
  */
 export default function Edit(props) {
 	const { attributes, setAttributes, isSelected } = props;
-
-	console.log(attributes);
-
 	const {prefix, typedText, suffix, textAlign} = attributes;
 
 	return (
@@ -60,7 +57,7 @@ export default function Edit(props) {
 
 			<p {...useBlockProps()}>
 				<span className="sb-typed-prefix">{prefix}</span>
-				<span className="sb-typed-text"> {typedText} </span>
+				<span className="sb-typed-text"> </span>
 				<span className="sb-typed-suffix">{suffix}</span>
 			</p>
 		</>

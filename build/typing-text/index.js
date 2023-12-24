@@ -62,7 +62,6 @@ function Edit(props) {
     setAttributes,
     isSelected
   } = props;
-  console.log(attributes);
   const {
     prefix,
     typedText,
@@ -83,7 +82,7 @@ function Edit(props) {
     className: "sb-typed-prefix"
   }, prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-text"
-  }, " ", typedText, " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, " "), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-suffix"
   }, suffix)));
 }
@@ -210,6 +209,7 @@ const Inspector = ({
       text_color: hexColor
     });
   };
+  console.log(attributes);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_3__.InspectorControls, {
     key: "controls"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -300,10 +300,16 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  console.log(attributes);
+  //console.log(attributes);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, attributes?.prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, attributes?.typedText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, attributes?.suffix));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-prefix"
+  }, attributes?.prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-text"
+  }, attributes?.typedText), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-suffix"
+  }, attributes?.suffix));
 }
 
 /***/ }),
@@ -398,7 +404,7 @@ module.exports = window["wp"]["i18n"];
   \************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"bg_color":{"type":"string","default":"#000000"},"resOption":{"type":"string","default":"Desktop"},"uniqueIdNumber":{"type":"number"},"blockId":{"type":"string"},"blockRoot":{"type":"string","default":"essential_block"},"blockMeta":{"type":"object"},"prefix":{"type":"string","source":"text","selector":".sb-typed-prefix","default":"Prefix Text "},"typedText":{"type":"array","source":"query","selector":".sb-typed-text","query":{"text":{"type":"string","source":"text"}},"default":["Typed text 1...","Typed text 2..."]},"suffix":{"type":"string","source":"text","selector":".sb-typed-suffix","default":"Suffix Text "},"prefixColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typedTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"suffixTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typeSpeed":{"type":"number","default":50},"startDelay":{"type":"number","default":0},"smartBackspace":{"type":"boolean","default":true},"backSpeed":{"type":"number","default":40},"backDelay":{"type":"number","default":700},"fadeOut":{"type":"boolean","default":false},"fadeOutDelay":{"type":"number","default":500},"loop":{"type":"boolean","default":false},"showCursor":{"type":"boolean","default":true},"textAlign":{"type":"string","default":"left"},"typedTextFontWeight":{"type":"string","default":600},"prefixTextFontWeight":{"type":"string","default":600},"suffixTextFontWeight":{"type":"string","default":600}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"shiny-blocks/typing-text","version":"0.0.1","title":"Typing Text","category":"shiny-blocks","icon":"ellipsis","description":"Typing Effect for Texts.","attributes":{"bg_color":{"type":"string","default":"#000000"},"resOption":{"type":"string","default":"Desktop"},"uniqueIdNumber":{"type":"number"},"blockId":{"type":"string"},"blockRoot":{"type":"string","default":"essential_block"},"blockMeta":{"type":"object"},"prefix":{"type":"string","source":"text","selector":".sb-typed-prefix","default":"Prefix Text"},"typedText":{"type":"array","source":"query","selector":".sb-typed-text","query":{"text":{"type":"string","source":"text","default":"Typed Text 1"}}},"suffix":{"type":"string","source":"text","selector":".sb-typed-suffix","default":"Suffix Text"},"prefixColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typedTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"suffixTextColor":{"type":"string","default":"var(--eb-global-primary-color)"},"typeSpeed":{"type":"number","default":50},"startDelay":{"type":"number","default":0},"smartBackspace":{"type":"boolean","default":true},"backSpeed":{"type":"number","default":40},"backDelay":{"type":"number","default":700},"fadeOut":{"type":"boolean","default":false},"fadeOutDelay":{"type":"number","default":500},"loop":{"type":"boolean","default":false},"showCursor":{"type":"boolean","default":true},"textAlign":{"type":"string","default":"left"},"typedTextFontWeight":{"type":"string","default":600},"prefixTextFontWeight":{"type":"string","default":600},"suffixTextFontWeight":{"type":"string","default":600}},"example":{},"supports":{"html":false},"textdomain":"shiny-blocks","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
