@@ -57,7 +57,7 @@ export default function Edit(props) {
 
 			<p {...useBlockProps()}>
 				<span className="sb-typed-prefix">{prefix}</span>
-				<span className="sb-typed-text"> </span>
+				<span className="sb-typed-text"> {typedText} </span>
 				<span className="sb-typed-suffix">{suffix}</span>
 			</p>
 		</>

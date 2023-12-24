@@ -34,15 +34,7 @@
 		},
 		"typedText": {
 			"type": "array",
-			"source": "query",
-			"selector": ".sb-typed-text",
-			"query": {
-				"text": {
-					"type": "string",
-					"source": "text",
-					"default": "Typed Text 1"
-				}
-			}
+			"default": ["Typed Text 1", "Typed Text 2"]
 		},
 		"suffix": {
 			"type": "string",
