@@ -49,7 +49,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		setAttributes({ text_color: hexColor });
 	};
 
-	console.log(attributes);
+	// console.log(attributes);
 
 	return (
 		<InspectorControls key="controls">

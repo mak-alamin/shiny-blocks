@@ -4,7 +4,9 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps } from "@wordpress/block-editor";
+
+import { TypeAnimation } from "react-type-animation";
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,12 +17,24 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save({attributes}) {
-	//console.log(attributes);
+export default function save({ attributes }) {
 	return (
-		<p { ...useBlockProps.save() }>
+		<p {...useBlockProps.save()}>
 			<span className="sb-typed-prefix">{attributes?.prefix}</span>
-			<span className="sb-typed-text">{attributes?.typedText}</span>
+			<TypeAnimation
+				sequence={[
+					" WordPress Expert",
+					1000,
+					" Fullstack Developer",
+					1000,
+					" UI/UX Designer",
+					1000,
+				]}
+				wrapper="span"
+				speed={50}
+				repeat={Infinity}
+				style={{ fontSize: "20px" }}
+			/>
 			<span className="sb-typed-suffix">{attributes?.suffix}</span>
 		</p>
 	);

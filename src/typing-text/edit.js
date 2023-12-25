@@ -18,9 +18,12 @@ import {
 	BlockControls,
 	AlignmentToolbar,
 } from "@wordpress/block-editor";
+
 import { TextControl } from "@wordpress/components";
 
 import Inspector from "./inspector";
+
+import { TypeAnimation } from "react-type-animation";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -40,7 +43,7 @@ import "./editor.scss";
  */
 export default function Edit(props) {
 	const { attributes, setAttributes, isSelected } = props;
-	const {prefix, typedText, suffix, textAlign} = attributes;
+	const { prefix, typedText, suffix, textAlign } = attributes;
 
 	return (
 		<>
@@ -57,7 +60,20 @@ export default function Edit(props) {
 
 			<p {...useBlockProps()}>
 				<span className="sb-typed-prefix">{prefix}</span>
-				<span className="sb-typed-text"> {typedText} </span>
+				<TypeAnimation
+					sequence={[
+						" WordPress Expert",
+						1000,
+						" Fullstack Developer",
+						1000,
+						" UI/UX Designer",
+						1000,
+					]}
+					wrapper="span"
+					speed={50}
+					repeat={Infinity}
+					style={{ fontSize: "20px" }}
+				/>
 				<span className="sb-typed-suffix">{suffix}</span>
 			</p>
 		</>
