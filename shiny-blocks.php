@@ -28,6 +28,7 @@ function shiny_blocks_shiny_blocks_block_init()
 {
 	register_block_type(__DIR__ . '/build/typing-text');
 	register_block_type(__DIR__ . '/build/advance-image');
+	register_block_type(__DIR__ . '/build/post-grid');
 }
 add_action('init', 'shiny_blocks_shiny_blocks_block_init');
 
