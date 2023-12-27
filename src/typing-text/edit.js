@@ -19,6 +19,8 @@ import {
 	AlignmentToolbar,
 } from "@wordpress/block-editor";
 
+import {useEffect} from "@wordpress/element";
+
 import { TextControl } from "@wordpress/components";
 
 import Inspector from "./inspector";
@@ -44,6 +46,19 @@ import "./editor.scss";
 export default function Edit(props) {
 	const { attributes, setAttributes, isSelected } = props;
 	const { prefix, typedText, suffix, textAlign } = attributes;
+
+	useEffect(() => {
+		setTimeout(function () {
+			new Typed(".sb-typed-texts", {
+				strings: ["WordPress Expert", "Fullstack Dev", "UI/UX designer"],
+				loop: true,
+				typeSpeed: 50,
+				backSpeed: 50,
+				backDelay: 500,
+				startDelay: 500,
+			});
+		}, 500);
+	});
 
 	return (
 		<>
@@ -78,17 +93,6 @@ export default function Edit(props) {
 				/> */}
 				<span className="sb-typed-suffix">{suffix}</span>
 			</p>
-
-			{setTimeout(function () {
-				new Typed(".sb-typed-texts", {
-					strings: ["WordPress Expert", "Fullstack Dev", "UI/UX designer"],
-					loop: true,
-					typeSpeed: 50,
-					backSpeed: 50,
-					backDelay: 500,
-					startDelay: 500,
-				});
-			}, 500)}
 		</>
 	);
 }

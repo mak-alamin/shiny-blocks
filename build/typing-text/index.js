@@ -18,11 +18,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./inspector */ "./src/typing-text/inspector.js");
-/* harmony import */ var react_type_animation__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-type-animation */ "./node_modules/react-type-animation/dist/esm/index.es.js");
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./src/typing-text/editor.scss");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _inspector__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./inspector */ "./src/typing-text/inspector.js");
+/* harmony import */ var react_type_animation__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-type-animation */ "./node_modules/react-type-animation/dist/esm/index.es.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./editor.scss */ "./src/typing-text/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -37,6 +39,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+
 
 
 
@@ -70,12 +73,24 @@ function Edit(props) {
     suffix,
     textAlign
   } = attributes;
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
+    setTimeout(function () {
+      new Typed(".sb-typed-texts", {
+        strings: ["WordPress Expert", "Fullstack Dev", "UI/UX designer"],
+        loop: true,
+        typeSpeed: 50,
+        backSpeed: 50,
+        backDelay: 500,
+        startDelay: 500
+      });
+    }, 500);
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.BlockControls, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.AlignmentToolbar, {
     value: textAlign,
     onChange: textAlign => setAttributes({
       textAlign
     })
-  })), isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_inspector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), isSelected && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_inspector__WEBPACK_IMPORTED_MODULE_5__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
@@ -86,16 +101,7 @@ function Edit(props) {
     className: "sb-typed-texts"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-suffix"
-  }, suffix)), setTimeout(function () {
-    new Typed(".sb-typed-texts", {
-      strings: ["WordPress Expert", "Fullstack Dev", "UI/UX designer"],
-      loop: true,
-      typeSpeed: 50,
-      backSpeed: 50,
-      backDelay: 500,
-      startDelay: 500
-    });
-  }, 500));
+  }, suffix)));
 }
 
 /***/ }),
