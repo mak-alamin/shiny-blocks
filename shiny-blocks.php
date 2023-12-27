@@ -26,7 +26,10 @@ if (!defined('ABSPATH')) {
  */
 function shiny_blocks_shiny_blocks_block_init()
 {
-	register_block_type(__DIR__ . '/build/typing-text');
+	register_block_type(__DIR__ . '/build/typing-text', array(
+		'script' => 'shiny-blocks-typing-text'
+	));
+
 	register_block_type(__DIR__ . '/build/advance-image');
 	register_block_type(__DIR__ . '/build/post-grid');
 }
@@ -46,4 +49,22 @@ if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
 	add_filter('block_categories_all', 'shiny_blocks_register_blocks_category', 99, 2);
 } else {
 	add_filter('block_categories', 'shiny_blocks_register_blocks_category', 99,2);
+}
+
+/**
+ * Enqueue Scripts
+ */
+add_action( 'wp_enqueue_scripts', 'shiny_blocks_enqueue_plugin_js' ); // Loads on frontend
+add_action( 'admin_enqueue_scripts', 'shiny_blocks_enqueue_plugin_js' ); // Loads in admin area
+
+function shiny_blocks_enqueue_plugin_js() {
+	wp_register_script('shiny-blocks-typing-text',plugin_dir_url( __FILE__ ) . 'assets/js/typed.min.js', array('jquery'), time(), false );
+
+	wp_enqueue_script(
+	  'shiny-blocks-frontend',
+	  plugin_dir_url( __FILE__ ) . 'assets/js/frontend.js',
+	  ['wp-element'],
+	  time(), // Change this to null for production
+	  true
+	);
 }

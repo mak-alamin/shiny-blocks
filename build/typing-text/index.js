@@ -82,14 +82,8 @@ function Edit(props) {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-prefix"
-  }, prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_type_animation__WEBPACK_IMPORTED_MODULE_5__.TypeAnimation, {
-    sequence: [" WordPress Expert", 1000, " Fullstack Developer", 1000, " UI/UX Designer", 1000],
-    wrapper: "span",
-    speed: 50,
-    repeat: Infinity,
-    style: {
-      fontSize: "20px"
-    }
+  }, prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-texts"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-suffix"
   }, suffix)));
@@ -316,14 +310,8 @@ function save({
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-prefix"
-  }, attributes?.prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_type_animation__WEBPACK_IMPORTED_MODULE_2__.TypeAnimation, {
-    sequence: [" WordPress Expert", 1000, " Fullstack Developer", 1000, " UI/UX Designer", 1000],
-    wrapper: "span",
-    speed: 50,
-    repeat: Infinity,
-    style: {
-      fontSize: "20px"
-    }
+  }, attributes?.prefix), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "sb-typed-texts"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-suffix"
   }, attributes?.suffix));

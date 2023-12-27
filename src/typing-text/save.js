@@ -21,20 +21,7 @@ export default function save({ attributes }) {
 	return (
 		<p {...useBlockProps.save()}>
 			<span className="sb-typed-prefix">{attributes?.prefix}</span>
-			<TypeAnimation
-				sequence={[
-					" WordPress Expert",
-					1000,
-					" Fullstack Developer",
-					1000,
-					" UI/UX Designer",
-					1000,
-				]}
-				wrapper="span"
-				speed={50}
-				repeat={Infinity}
-				style={{ fontSize: "20px" }}
-			/>
+			<span className="sb-typed-texts"></span>
 			<span className="sb-typed-suffix">{attributes?.suffix}</span>
 		</p>
 	);

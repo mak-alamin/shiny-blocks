@@ -60,7 +60,9 @@ export default function Edit(props) {
 
 			<p {...useBlockProps()}>
 				<span className="sb-typed-prefix">{prefix}</span>
-				<TypeAnimation
+				<span className="sb-typed-texts"></span>
+
+				{/* <TypeAnimation
 					sequence={[
 						" WordPress Expert",
 						1000,
@@ -73,7 +75,7 @@ export default function Edit(props) {
 					speed={50}
 					repeat={Infinity}
 					style={{ fontSize: "20px" }}
-				/>
+				/> */}
 				<span className="sb-typed-suffix">{suffix}</span>
 			</p>
 		</>

@@ -11,7 +11,7 @@
 	"supports": {
 		"html": false
 	},
-	"textdomain": "post-grid",
+	"textdomain": "shiny-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
