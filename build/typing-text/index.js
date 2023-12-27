@@ -86,7 +86,16 @@ function Edit(props) {
     className: "sb-typed-texts"
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "sb-typed-suffix"
-  }, suffix)));
+  }, suffix)), setTimeout(function () {
+    new Typed(".sb-typed-texts", {
+      strings: ["WordPress Expert", "Fullstack Dev", "UI/UX designer"],
+      loop: true,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 500,
+      startDelay: 500
+    });
+  }, 500));
 }
 
 /***/ }),

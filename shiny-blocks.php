@@ -27,7 +27,8 @@ if (!defined('ABSPATH')) {
 function shiny_blocks_shiny_blocks_block_init()
 {
 	register_block_type(__DIR__ . '/build/typing-text', array(
-		'script' => 'shiny-blocks-typing-text'
+		'script' => 'shiny-blocks-typing-text',
+		// 'editor_script' => 'shiny-blocks-admin-js',
 	));
 
 	register_block_type(__DIR__ . '/build/advance-image');
@@ -55,8 +56,6 @@ if (version_compare(get_bloginfo('version'), '5.8', '>=')) {
  * Enqueue Scripts
  */
 add_action( 'wp_enqueue_scripts', 'shiny_blocks_enqueue_plugin_js' ); // Loads on frontend
-add_action( 'admin_enqueue_scripts', 'shiny_blocks_enqueue_plugin_js' ); // Loads in admin area
-
 function shiny_blocks_enqueue_plugin_js() {
 	wp_register_script('shiny-blocks-typing-text',plugin_dir_url( __FILE__ ) . 'assets/js/typed.min.js', array('jquery'), time(), false );
 
@@ -67,4 +66,11 @@ function shiny_blocks_enqueue_plugin_js() {
 	  time(), // Change this to null for production
 	  true
 	);
+}
+
+add_action( 'enqueue_block_editor_assets', 'shiny_blocks_enqueue_admin_js' );
+function shiny_blocks_enqueue_admin_js() {
+	wp_register_script('shiny-blocks-typing-text',plugin_dir_url( __FILE__ ) . 'assets/js/typed.min.js', array('jquery'), time(), true );
+
+	wp_register_script('shiny-blocks-admin-js',plugin_dir_url( __FILE__ ) . 'assets/js/admin.js', array('shiny-blocks-typing-text'), time(), true);
 }
